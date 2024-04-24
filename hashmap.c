@@ -95,10 +95,30 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
-
-
+Pair * searchMap(HashMap * map,  char * key) 
+{
+  int position = hash(key, map->capacity);
+  if (map->buckets[position] == NULL)
+  {
     return NULL;
+  }
+  else
+  {
+    while (map->buckets[position] != NULL)
+      {
+        if (is_equal(map->buckets[position]->key, key))
+        {
+          return map->buckets[position];
+        }
+        position = (position + 1) % map->capacity;
+      }
+    return NULL;
+    
+  }
+  
+  
+  
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
