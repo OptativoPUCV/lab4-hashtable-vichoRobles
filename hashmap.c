@@ -151,10 +151,9 @@ Pair * firstMap(HashMap * map)
         map->current = i;
         return map->buckets[i];
       }
+      
     }
-  
-
-    return NULL;
+    
 }
 
 Pair * nextMap(HashMap * map) {
