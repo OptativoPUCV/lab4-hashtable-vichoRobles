@@ -2,3 +2,14 @@ Wed 24 Apr 2024 01:39:17 AM UTC:
  tests:  0|6
 total_score: 0/70
 1d3c93b
+Wed 24 Apr 2024 05:47:19 PM UTC: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:45:69: error: comparison between pointer and integer [-Werror]
+   45 |   if (map->buckets[position] == NULL || map->buckets[position]->key == -1)
+      |                                                                     ^~
+cc1: all warnings being treated as errors
+Compilation failed
+5e97ee7
