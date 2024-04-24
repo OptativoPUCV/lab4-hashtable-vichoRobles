@@ -62,7 +62,8 @@ void insertMap(HashMap * map, char * key, void * value) {
         current = current->next;
       }
     Pair* newElem = createPair(key, value);
-    current->next = newElem;
+    newElem->value = value;
+    newElem->key = key;
     map->size++;
     return;
   }
