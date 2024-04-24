@@ -130,7 +130,6 @@ Pair * searchMap(HashMap * map,  char * key)
           return map->buckets[position];
         }
         position = (position + 1) % map->capacity;
-        
       }
     
     return NULL;
@@ -142,7 +141,18 @@ Pair * searchMap(HashMap * map,  char * key)
   return NULL;
 }
 
-Pair * firstMap(HashMap * map) {
+Pair * firstMap(HashMap * map) 
+{
+  int i;
+  for (i = 0; i < map->capacity; i++)
+    {
+      if (map->buckets[i] != NULL)
+      {
+        map->current = i;
+        return map->buckets[i];
+      }
+    }
+  
 
     return NULL;
 }
