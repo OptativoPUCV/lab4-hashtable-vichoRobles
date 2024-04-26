@@ -127,6 +127,7 @@ Pair * searchMap(HashMap * map,  char * key)
       {
         if (is_equal(map->buckets[position]->key, key))
         {
+          map->current = position;
           return map->buckets[position];
         }
         position = (position + 1) % map->capacity;
@@ -151,7 +152,6 @@ Pair * firstMap(HashMap * map)
         map->current = i;
         return map->buckets[i];
       }
-      
     }
   return NULL;
 }
