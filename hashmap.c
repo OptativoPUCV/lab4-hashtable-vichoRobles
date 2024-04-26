@@ -161,7 +161,6 @@ Pair * firstMap(HashMap * map)
 Pair * nextMap(HashMap * map) 
 {
   if (map == NULL) return NULL;
-  if (map->current == -1) return NULL;
   int i;
   for (i = map->current + 1; i < map->capacity; i++)
     {
